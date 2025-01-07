@@ -4,7 +4,7 @@ import axios from "axios";
 export const useWeatherStore = defineStore("weather", {
     state: () => ({
         apiBase: "https://api.openweathermap.org/data/2.5/",
-        apiKey: "496cb815235ae672225f57f92dcf39ff",
+        apiKey: "TOKEN_FUCK_I_FORGOT_TO_HIDE_IT_BEFORE_COMMIT",
         defaultSearch: "Jakarta",
         search: "",
         isError: null,
@@ -33,6 +33,7 @@ export const useWeatherStore = defineStore("weather", {
             this.search = search;
             this.isError = null;
             try {
+                // api call fetch weather data
                 const response = await axios.get(
                     `${this.apiBase}/weather`, {
                     params: {
@@ -42,6 +43,7 @@ export const useWeatherStore = defineStore("weather", {
                     }
                 });
                 const { name, main, weather, wind, clouds, sys } = response.data;
+                // update weatherData state with the response data
                 this.weatherData = {
                     name,
                     temp: main.temp,

@@ -28,19 +28,19 @@ export default {
 			search: "",
 		};
 	},
-	computed: {
-		// ...existing code...
-	},
 	created() {
+		// init weather store and map its state to component properties
 		this.weatherStore = useWeatherStore();
 		Object.assign(this, storeToRefs(this.weatherStore));
 	},
 	methods: {
 		async getData() {
+			// if search input is empty, set error state
 			if (!this.search) {
 				this.weatherStore.isError = true;
 				return;
 			}
+			// reset error state and fetch weather data
 			this.weatherStore.isError = null;
 			await this.weatherStore.fetchWeatherData(this.search);
 		},

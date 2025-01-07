@@ -21,6 +21,7 @@ import { mapState } from "pinia";
 export default {
 	name: "WeatherInfo",
 	computed: {
+		// map state from weather store to local computed properties
 		...mapState(useWeatherStore, [
 			"weatherData",
 			"isError",
@@ -31,14 +32,17 @@ export default {
 		weatherMain() {
 			return this.getWeatherMain;
 		},
+		// get additional weather information
 		weatherInfo() {
 			return this.getWeatherInfo;
 		},
+		// get country weather data
 		weatherCountry() {
 			return this.getWeatherCountry;
 		},
 	},
 	created() {
+		// fetch weather data when the component is created
 		const weatherStore = useWeatherStore();
 		weatherStore.fetchWeatherData(weatherStore.defaultSearch);
 	},

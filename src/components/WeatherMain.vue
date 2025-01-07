@@ -41,10 +41,13 @@ export default {
 		};
 	},
 	computed: {
+		// map the store's state to computed properties
 		...mapStores(useWeatherStore, ["getWeatherMain"]),
+		// compute the rounded value temperature
 		roundedFeelsLike() {
 			return Math.round(this.weatherStore.getWeatherMain.feelsLike);
 		},
+		// compute the rounded value main temperature
 		roundedTemp() {
 			return Math.round(this.weatherStore.getWeatherMain.temp);
 		},
