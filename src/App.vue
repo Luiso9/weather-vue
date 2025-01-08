@@ -1,13 +1,12 @@
 <template>
 	<transition name="fade" mode="out-in" appear>
-		<div class="card">
-			<WeatherSearch />
-			<WeatherMain />
-			<WeatherInfo />
+		<div>
+			<div class="card">
+				<WeatherSearch />
+				<WeatherMain />
+				<WeatherInfo />
+			</div>
 		</div>
-    <div class="img">
-      
-    </div>
 	</transition>
 </template>
 
@@ -30,8 +29,6 @@ export default {
 </script>
 
 <style lang="less">
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;0,800;0,900;1,300;1,500&display=swap");
-
 .fade-enter-active,
 .fade-leave-active {
 	transition: all 1s;
@@ -51,6 +48,11 @@ export default {
 }
 body {
 	overflow: hidden;
+	background-image: linear-gradient(
+		135deg,
+		rgb(12, 31, 48) 0%,
+		rgb(1, 5, 16) 75%
+	);
 }
 .app {
 	display: flex;
@@ -63,8 +65,9 @@ body {
 	max-width: var(360px);
 	width: 100%;
 	padding: 40px;
+	background-color: rgb(18, 22, 26);
 	border-radius: 20px;
-	box-shadow: 0 0 70px fade(rgb(104, 103, 103), 30);
+	box-shadow: 0 0 70px fade(rgb(1, 5, 16), 30);
 	z-index: 9999;
 
 	@media (max-height: 767px) {

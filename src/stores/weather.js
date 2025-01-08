@@ -4,7 +4,7 @@ import axios from "axios";
 export const useWeatherStore = defineStore("weather", {
     state: () => ({
         apiBase: "https://api.openweathermap.org/data/2.5/",
-        apiKey: "TOKEN_FUCK_I_FORGOT_TO_HIDE_IT_BEFORE_COMMIT",
+        apiKey: "TOKEN_HERE_FUCK",
         defaultSearch: "Jakarta",
         search: "",
         isError: null,
